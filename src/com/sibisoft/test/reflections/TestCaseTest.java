@@ -3,6 +3,7 @@ package com.sibisoft.test.reflections;
 import java.lang.reflect.InvocationTargetException;
 public class TestCaseTest extends TestCase{
 	
+	WasRun test ;
 	public TestCaseTest(String methodName) {
 		super(methodName);
 	}
@@ -13,25 +14,25 @@ public class TestCaseTest extends TestCase{
 									IllegalAccessException,
 									InvocationTargetException 
 									 {
-		WasRun test = new WasRun("testMethod");
-		System.out.println("TestCaseTest.WasRun = "+test.wasRun);
-		try{
-			test.run();	
-		}catch(SecurityException ex){
-			ex.printStackTrace();
-		}catch(IllegalArgumentException ex){
-			ex.printStackTrace();
-		}catch(NoSuchMethodException ex){
-			ex.printStackTrace();
-		}catch(IllegalAccessException ex){
-			ex.printStackTrace();
-		}catch(InvocationTargetException  ex){
-			ex.printStackTrace();
-		}catch(Exception ex){
-			ex.printStackTrace();
-		}
-		System.out.println("TestCaseTest.WasRun = "+test.wasRun);
-		
+		this.setUp();
+		test.run();
+		assert (test.wasRun);
 	}
+	
+	public void testSetUp() throws SecurityException, 
+								   IllegalArgumentException, 
+								   NoSuchMethodException, 
+								   IllegalAccessException, 
+								   InvocationTargetException{
+		
+		this.setUp();
+		test.run();
+		assert (test.wasSetUp);
+	}
+	
+	public void setUp(){
+		test = new WasRun("testMethod");
+	}
+	
 
 }

@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class TestCase {
+	
 	String methodName ;
 
 	public TestCase(String methodName){
@@ -16,6 +17,13 @@ public class TestCase {
     							IllegalAccessException, 
     							InvocationTargetException {
 		Method method = this.getClass().getMethod(methodName);
-		method.invoke(this);
-}
+		
+		try{
+	    	  method.invoke(this);
+	      }catch(Exception ex){
+	    	  ex.printStackTrace();
+	      }
+		
+		
+	}
 }
