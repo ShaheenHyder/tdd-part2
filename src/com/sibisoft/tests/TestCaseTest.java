@@ -14,4 +14,10 @@ public class TestCaseTest extends TestCase{
 		testRunning.run();
 		assertTrue(testRunning.wasRun.equals("true"));
 	}
+	
+	public void testSetUp(){
+		WasRun test = new WasRun();
+		test.run();
+		assertTrue(test.wasSetUp.equals("true"));
+	}
 }
