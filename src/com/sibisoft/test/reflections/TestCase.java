@@ -1,6 +1,5 @@
 package com.sibisoft.test.reflections;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class TestCase {
@@ -11,19 +10,19 @@ public class TestCase {
 		this.methodName = methodName;
 	}
 	
-	public void run() throws SecurityException, 
-    							NoSuchMethodException, 
-    							IllegalArgumentException, 
-    							IllegalAccessException, 
-    							InvocationTargetException {
+	public TestResult run() throws Exception {
 		Method method = this.getClass().getMethod(methodName);
+		TestResult result = new TestResult();
+		result.testStarted();
 		setUp();
 		try{
 	    	  method.invoke(this);
 	      }catch(Exception ex){
-	    	  ex.printStackTrace();
+	    	  //ex.printStackTrace();
+	    	  result.testFailed();
 	      }
   	    tearDown();
+  	    return result;
 
 	}
 	
