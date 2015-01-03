@@ -5,7 +5,7 @@ public class TestCase {
 	public String wasRun ;
 	public String wasSetUp = "false";
 	
-	TestCase(){
+	public TestCase(){
 	}
 	
 	public void testMethod(){

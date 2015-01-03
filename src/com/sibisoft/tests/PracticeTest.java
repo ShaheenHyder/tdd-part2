@@ -19,5 +19,11 @@ public class PracticeTest {
 		TestCaseTest testCaseTest = new TestCaseTest();
 		testCaseTest.testRunning();
 	}
+	
+	@Test
+	public void testSetUp(){
+		TestCaseTest testCaseTest = new TestCaseTest();
+		testCaseTest.testSetUp();
+	}
 
 }
