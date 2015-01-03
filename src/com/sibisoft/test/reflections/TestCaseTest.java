@@ -4,35 +4,21 @@ import java.lang.reflect.InvocationTargetException;
 public class TestCaseTest extends TestCase{
 	
 	WasRun test ;
+	
 	public TestCaseTest(String methodName) {
 		super(methodName);
 	}
 
-	public void testRunning() throws SecurityException,
-									 IllegalArgumentException, 
-									 NoSuchMethodException, 
-									IllegalAccessException,
-									InvocationTargetException 
-									 {
-		this.setUp();
-		test.run();
-		assert (test.wasRun);
-	}
-	
-	public void testSetUp() throws SecurityException, 
+	public void testTemplateMethod() throws SecurityException, 
 								   IllegalArgumentException, 
 								   NoSuchMethodException, 
 								   IllegalAccessException, 
 								   InvocationTargetException{
 		
-		this.setUp();
+		WasRun test = new WasRun("testMethod");
 		test.run();
-		assert (test.wasSetUp);
+		System.out.println(test.log);
+		assert("setUp testMethod tearDown ".equals(test.log));
 	}
 	
-	public void setUp(){
-		test = new WasRun("testMethod");
-	}
-	
-
 }

@@ -2,21 +2,21 @@ package com.sibisoft.test.reflections;
 
 public class WasRun extends TestCase {
 	
-	boolean wasRun ;
-	boolean wasSetUp;
+	String log;
 	
 	public WasRun(String methodName){
 		super(methodName);
-		wasRun = false;
-		wasSetUp = true;
 	}
 	
 	public void testMethod(){
-		wasRun = true;
+		log += methodName+" ";
 	}
 	
 	public void setUp(){
-		wasRun=false;
-		wasSetUp=true;
+		log = "setUp ";
+	}
+	
+	public void tearDown(){
+		log += "tearDown ";
 	}
 }

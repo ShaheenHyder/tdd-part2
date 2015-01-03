@@ -17,13 +17,21 @@ public class TestCase {
     							IllegalAccessException, 
     							InvocationTargetException {
 		Method method = this.getClass().getMethod(methodName);
-		
+		setUp();
 		try{
 	    	  method.invoke(this);
 	      }catch(Exception ex){
 	    	  ex.printStackTrace();
 	      }
+  	    tearDown();
+
+	}
+	
+	public void setUp(){
 		
+	}
+	
+	public void tearDown(){
 		
 	}
 }
