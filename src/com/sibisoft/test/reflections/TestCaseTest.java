@@ -1,8 +1,5 @@
 package com.sibisoft.test.reflections;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
-
 import java.lang.reflect.InvocationTargetException;
 public class TestCaseTest extends TestCase{
 	
@@ -13,12 +10,28 @@ public class TestCaseTest extends TestCase{
 	public void testRunning() throws SecurityException,
 									 IllegalArgumentException, 
 									 NoSuchMethodException, 
-									 IllegalAccessException, 
-									 InvocationTargetException{
+									IllegalAccessException,
+									InvocationTargetException 
+									 {
 		WasRun test = new WasRun("testMethod");
-		assertFalse(test.wasRun);
-		test.run();
-		assertTrue(test.wasRun);
+		System.out.println("TestCaseTest.WasRun = "+test.wasRun);
+		try{
+			test.run();	
+		}catch(SecurityException ex){
+			ex.printStackTrace();
+		}catch(IllegalArgumentException ex){
+			ex.printStackTrace();
+		}catch(NoSuchMethodException ex){
+			ex.printStackTrace();
+		}catch(IllegalAccessException ex){
+			ex.printStackTrace();
+		}catch(InvocationTargetException  ex){
+			ex.printStackTrace();
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+		System.out.println("TestCaseTest.WasRun = "+test.wasRun);
+		
 	}
 
 }
