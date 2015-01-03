@@ -14,16 +14,10 @@ public class PracticeTest {
 
 	} 
 	
-	@Test 
-	public void testRunning(){
-		TestCaseTest testCaseTest = new TestCaseTest();
-		testCaseTest.testRunning();
-	}
-	
 	@Test
-	public void testSetUp(){
+	public void testTemplateMethod(){
 		TestCaseTest testCaseTest = new TestCaseTest();
-		testCaseTest.testSetUp();
+		testCaseTest.testTemplateMethod();
 	}
 
 }
