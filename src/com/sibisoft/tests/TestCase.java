@@ -3,7 +3,7 @@ package com.sibisoft.tests;
 public class TestCase {
 	
 	public String wasRun ;
-	public String wasSetUp = "false";
+	public String log;
 	
 	public TestCase(){
 	}

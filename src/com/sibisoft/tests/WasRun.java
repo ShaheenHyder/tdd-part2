@@ -10,6 +10,11 @@ public class WasRun extends TestCase{
 	
 	public void setUp(){
 		wasRun= "false";
-		wasSetUp="true";
+		log="setUp ";
+	}
+	
+	public void testMethod(){
+		wasRun="true";
+		log += "WasRun.testMethod";
 	}
 }
