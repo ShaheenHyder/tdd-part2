@@ -14,8 +14,8 @@ public class TestCase {
 		Method method = this.getClass().getMethod(methodName);
 		TestResult result = new TestResult();
 		result.testStarted();
-		setUp();
 		try{
+			  setUp();
 	    	  method.invoke(this);
 	      }catch(Exception ex){
 	    	  //ex.printStackTrace();
@@ -26,7 +26,7 @@ public class TestCase {
 
 	}
 	
-	public void setUp(){
+	public void setUp() throws Exception{
 		
 	}
 	

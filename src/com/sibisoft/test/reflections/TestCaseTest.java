@@ -11,8 +11,10 @@ public class TestCaseTest extends TestCase{
 	public void testTemplateMethod() throws Exception{
 		
 		WasRun test = new WasRun("testMethod");
-		test.run();
+		TestResult result = test.run();
 		System.out.println(test.log);
+		System.out.println(result.summary());
+		//assert("1 run, 1 failed".equals(result.summary()));
 		assert("setUp testMethod tearDown ".equals(test.log));
 	}
 	
@@ -26,6 +28,14 @@ public class TestCaseTest extends TestCase{
 	public void testFailedResult() throws Exception{
 		WasRun test = new WasRun("testBrokenMethod");
 		TestResult result = test.run();
+		System.out.println(result.summary());
+		assert("1 run, 1 failed".equals(result.summary()));
+	}
+	
+	public void testFailedResultFormatting(){
+		TestResult result =  new TestResult();
+		result.testStarted();
+		result.testFailed();
 		System.out.println(result.summary());
 		assert("1 run, 1 failed".equals(result.summary()));
 	}

@@ -12,8 +12,9 @@ public class WasRun extends TestCase {
 		log += methodName+" ";
 	}
 	
-	public void setUp(){
+	public void setUp() throws Exception{
 		log = "setUp ";
+//		throw new Exception("Exception here");
 	}
 	
 	public void tearDown(){

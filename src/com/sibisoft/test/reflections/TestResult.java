@@ -2,11 +2,11 @@ package com.sibisoft.test.reflections;
 
 public class TestResult {
 
-	public int runCount;
-	public int faildCount;
+	public int runCount=0;
+	public int errorCount=0;
 	
 	public String summary(){
-		return  runCount+" run, "+faildCount+" failed";
+		return  runCount+" run, "+errorCount+" failed";
 	}
 	
 	public void testStarted(){
@@ -14,6 +14,6 @@ public class TestResult {
 	}
 	
 	public void testFailed(){
-		faildCount++;
+		errorCount++;
 	}
 }
