@@ -9,6 +9,7 @@ public class WasRun extends TestCase{
 	}
 	
 	public void setUp(){
+		wasRun= "false";
 		wasSetUp="true";
 	}
 }

@@ -4,20 +4,26 @@ import static org.junit.Assert.*;
 
 public class TestCaseTest extends TestCase{
 	
+	WasRun test = null;
+	
 	TestCaseTest() {
 		super();
 	}
 
 	public void testRunning(){
-		WasRun testRunning = new WasRun();
-		assertTrue(testRunning.wasRun.equals("false"));
-		testRunning.run();
-		assertTrue(testRunning.wasRun.equals("true"));
+		this.setUp();
+		test.run();
+		assertTrue(test.wasRun.equals("true"));
 	}
 	
 	public void testSetUp(){
-		WasRun test = new WasRun();
+		this.setUp();
 		test.run();
 		assertTrue(test.wasSetUp.equals("true"));
+	}
+	
+	public void setUp(){
+		test = new WasRun();
+		
 	}
 }
