@@ -14,7 +14,6 @@ public class WasRun extends TestCase {
 	
 	public void setUp() throws Exception{
 		log = "setUp ";
-//		throw new Exception("Exception here");
 	}
 	
 	public void tearDown(){
@@ -23,7 +22,7 @@ public class WasRun extends TestCase {
 	
 	public void testBrokenMethod() throws Exception{
 		
-		throw new Exception("Exception here");
+		throw new Exception("Exception testBrokenMethod");
 		
 	}
 	
